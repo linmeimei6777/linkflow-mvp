@@ -3,36 +3,280 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>链接流 MVP</title>
-  <link rel="manifest" href="manifest.json" />
+  <title>链接流 LinkFlow · 安装入口</title>
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e2537;
+      --text-main: #f8fafc;
+      --text-sec: #94a3b8;
+      --primary: #3b82f6;
+      --border: #334155;
+      --radius-xl: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .header {
       text-align: center;
-      background-color: #f5f7fa;
-      color: #333;
-      padding: 50px;
+      margin-bottom: 16px;
     }
-    h1 {
-      color: #007aff;
+
+    .logo-circle {
+      width: 64px;
+      height: 64px;
+      background: radial-gradient(circle at 30% 30%, #4f46e5 0%, #1e1e2e 70%);
+      border-radius: 16px;
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      border: 1px solid #6366f1;
+      box-shadow: 0 20px 40px rgba(59,130,246,.35);
     }
-    button {
-      background: #007aff;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
+
+    .app-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--text-sec);
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+
+    .card {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 20px 20px 16px;
+      box-shadow: 0 24px 64px rgba(0,0,0,.6);
+    }
+
+    .section-title {
+      color: var(--text-sec);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .env-badge {
+      background: rgba(148,163,184,.12);
+      color: var(--text-sec);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .btn-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,.6);
+      color: var(--text-main);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+      box-shadow: 0 16px 32px rgba(59,130,246,.45);
+    }
+
+    .btn-left {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .btn-title {
+      line-height: 1.3;
+    }
+
+    .btn-desc {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-sec);
+      line-height: 1.4;
+    }
+
+    .arrow {
       font-size: 16px;
-      cursor: pointer;
+      font-weight: 500;
+      opacity: .7;
     }
-    button:hover {
-      background: #005bbb;
+
+    .hint-box {
+      background: rgba(15,23,42,.4);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-sec);
+    }
+
+    .hint-box strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #475569;
+      margin-top: 16px;
     }
   </style>
 </head>
 <body>
-  <h1>欢迎使用 链接流 LinkFlow</h1>
-  <p>这是一个 iOS 优先的 PWA 示例，支持添加到主屏幕体验。</p>
-  <button onclick="alert('已点击！')">立即体验</button>
+  <div class="wrap">
+    <!-- 顶部应用信息 -->
+    <div class="header">
+      <div class="logo-circle" id="logoCircle">LF</div>
+      <div class="app-name" id="appName">链接流 LinkFlow</div>
+      <div class="tagline">一键分发 iOS / Android / H5 · 支持添加到主屏幕体验</div>
+    </div>
+
+    <!-- 卡片主体 -->
+    <div class="card">
+      <div class="section-title">
+        <span>选择你的安装方式</span>
+        <span class="env-badge" id="envTag">正在检测设备…</span>
+      </div>
+
+      <div class="btn-list">
+        <a class="btn" id="btnIOS" href="#" target="_blank" rel="noopener">
+          <div class="btn-left">
+            <div class="btn-title">iOS 安装</div>
+            <div class="btn-desc">Safari 打开后添加到主屏幕</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="btn" id="btnAndroid" href="#" target="_blank" rel="noopener">
+          <div class="btn-left">
+            <div class="btn-title">Android 下载</div>
+            <div class="btn-desc">APK直装 / 商店安装</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <a class="btn" id="btnH5" href="#" target="_blank" rel="noopener">
+          <div class="btn-left">
+            <div class="btn-title">网页版 / 备用入口</div>
+            <div class="btn-desc">浏览器立即打开使用</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+      </div>
+
+      <div class="hint-box" id="hintBox" style="display:none;">
+        <div id="hintText"></div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      安装遇到问题？请长按截图，发给客服。
+    </div>
+  </div>
+
+  <script>
+    // ====== 你以后给客户改这里就行（这块就是“配置”）======
+    const CONFIG = {
+      appName: "链接流 LinkFlow",
+      logoText: "LF",
+      iosUrl: "https://example.com/ios-pwa",        // iOS 用的链接（可以是你的PWA地址）
+      androidUrl: "https://example.com/app-release.apk", // 安卓APK或商店地址
+      webUrl: "https://example.com/web",            // 备用H5/官网/引流页
+    };
+    // ========================================================
+
+    // 设置文案/链接
+    document.getElementById("appName").textContent = CONFIG.appName;
+    document.getElementById("logoCircle").textContent = CONFIG.logoText;
+    document.getElementById("btnIOS").href = CONFIG.iosUrl;
+    document.getElementById("btnAndroid").href = CONFIG.androidUrl;
+    document.getElementById("btnH5").href = CONFIG.webUrl;
+
+    // 设备识别
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isIOS = /iPhone|iPad|iPod/i.test(ua);
+    const isAndroid = /Android/i.test(ua);
+
+    const btnIOS = document.getElementById("btnIOS");
+    const btnAndroid = document.getElementById("btnAndroid");
+    const btnH5 = document.getElementById("btnH5");
+    const envTag = document.getElementById("envTag");
+    const hintBox = document.getElementById("hintBox");
+    const hintText = document.getElementById("hintText");
+
+    function highlight(btn) {
+      btn.classList.add("primary");
+    }
+
+    if (isIOS) {
+      envTag.textContent = "iOS 设备";
+      highlight(btnIOS);
+      hintBox.style.display = "block";
+      hintText.innerHTML = "在 Safari 打开后，点击底部的 <strong>分享</strong> 按钮，选择 <strong>添加到主屏幕</strong>，即可像原生App一样使用。";
+    } else if (isAndroid) {
+      envTag.textContent = "Android 设备";
+      highlight(btnAndroid);
+      hintBox.style.display = "block";
+      hintText.innerHTML = "如果看到 “安装应用” 或 “添加到主屏幕”，可一键安装。无法安装时可直接下载 APK 安装包。";
+    } else {
+      envTag.textContent = "桌面 / 其他环境";
+      highlight(btnH5);
+      hintBox.style.display = "block";
+      hintText.innerHTML = "你目前不在手机上，使用网页版进行预览。把这个页发给用户，用户手机打开后将得到对应安装指引。";
+    }
+  </script>
 </body>
 </html>
