@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>链接流 LinkFlow · 安装入口</title>
-  <style>
+  <!-- 让浏览器把它当成一个App -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- iOS 专属：允许“添加到主屏幕后”全屏显示、标题 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="LinkFlow" />
+<style>
     :root {
       --bg: #0f172a;
       --card: #1e2537;
