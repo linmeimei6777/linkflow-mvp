@@ -1,19 +1,21 @@
 {
-  "name": "链接流 LinkFlow",
+  "name": "LinkFlow",
   "short_name": "LinkFlow",
   "description": "一键分发 iOS / Android / H5 · 支持添加到主屏幕体验",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#1e3a8a",
+  "theme_color": "#1e3a8a",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "简洁的LinkFlow图标设计.png"
+
+
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src":  "简洁的LinkFlow图标设计.png"
       "sizes": "512x512",
       "type": "image/png"
     }
