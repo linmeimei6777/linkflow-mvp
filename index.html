@@ -37,18 +37,23 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body {
-      margin: 0;
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      display: flex;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
+   body {
+  margin: 0;
 
+  /* 这里是关键变化，原来是 background-color: var(--bg); */
+  background: var(--bg);
+  background-attachment: fixed;
+  background-size: cover;
+
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
     .wrap {
       width: 100%;
       max-width: 420px;
