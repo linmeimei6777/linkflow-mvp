@@ -1,71 +1,86 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>链接流 LinkFlow · 安装入口</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>链接流 LinkFlow · 安装入口</title>
+
     <!-- iOS PWA 相关优化 -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="LinkFlow" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="LinkFlow" />
 
-  <!-- 主题色（Safari 顶栏 / Android 任务栏） -->
-  <meta name="theme-color" content="#1e3a8a" />
+    <!-- 主题颜色 (Safari 顶栏 / Android 任务栏) -->
+    <meta name="theme-color" content="#334155" />
 
-  <!-- PWA manifest -->
-  <link rel="manifest" href="manifest.json" />
+    <!-- 禁止缓存，确保主屏幕更新 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-  <!-- iOS 图标 fallback -->
-  <link rel="apple-touch-icon" href="icon-192.png" />
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json" />
 
-  <!-- 让浏览器把它当成一个App -->
+    <!-- iOS 图标 fallback -->
+    <link rel="apple-touch-icon" href="icon-192.png" />
 
-  <!-- iOS 专属：允许“添加到主屏幕后”全屏显示、标题 -->
-<style>
-    :root {
-         --bg: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      --card: #1e2537;
-      --text-main: #f8fafc;
-      --text-sec: #94a3b8;
-      --primary: #3b82f6;
-      --border: #334155;
-      --radius-xl: 20px;
-    }
+    <!-- 基础样式 -->
+    <style>
+      :root {
+        --bg-light: #f8fafc;
+        --bg-mid: #dbeafe;
+        --bg-dark: #334155;
+        --card: #1e2537;
+        --text-main: #f8fafc;
+        --text-sec: #94a3b8;
+        --primary: #3b82f6;
+        --border: #334155;
+        --radius-xl: 20px;
+      }
 
-    * {
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-    }
+      * {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
 
-   body {
-  margin: 0;
+      body {
+        margin: 0;
 
-  /* 这里是关键变化，原来是 background-color: var(--bg); */
-  background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 40%, #334155 100%);
-background-attachment: fixed;
-background-size: cover;
+        /* ✅ 渐变背景：适配 iOS + WebView */
+        background: -webkit-linear-gradient(135deg, var(--bg-light) 0%, var(--bg-mid) 40%, var(--bg-dark) 100%) !important;
+        background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-mid) 40%, var(--bg-dark) 100%) !important;
+        background-attachment: fixed;
+        background-size: cover;
 
-  color: var(--text-main);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--text-main);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-    .wrap {
-      width: 100%;
-      max-width: 420px;
-    }
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
 
-    .header {
-      text-align: center;
-      margin-bottom: 16px;
-    }
+      .wrap {
+        width: 100%;
+        max-width: 420px;
+      }
 
-    .logo-circle {
-      width: 64px;
+      .header {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .logo-circle {
+        width: 64px;
+        height: 64px;
+        background: radial-gradient(circle at 30% 30%, #4f46e5 0%, #1e1e2e 70%);
+        border-radius: 16px;
+      }
+    </style>
+  </head>
+  width: 64px;
       height: 64px;
       background: radial-gradient(circle at 30% 30%, #4f46e5 0%, #1e1e2e 70%);
       border-radius: 16px;
